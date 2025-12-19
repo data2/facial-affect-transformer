@@ -1,0 +1,1138 @@
+============================================================
+🎯 冲刺80%准确率训练配置
+============================================================
+📊 模型: vit_base_patch16_224
+📈 目标准确率: 80.0%
+⚙️  批次大小: 16
+📚 总轮数: 100
+💡 学习率: 1.0e-05
+🔄 热身轮数: 15
+🎨 增强策略: CutMix(0.45), MixUp(0.25)
+⚖️  动态权重调整: 启用
+🛡️  早停耐心: 15
+🔄 从检查点恢复: best_model_80_target.pth (Epoch 50)
+💻 训练设备: cuda
+============================================================
+
+🚀 开始冲刺80%准确率训练!
+============================================================
+🔧 应用微调策略:
+  🔄 warmup轮数: 15 → 20
+  🎨 数据增强设置: CutMix(0.45), MixUp(0.25)
+  ⚡ 学习率峰值限制: 5.0e-5 → 2.5e-5
+
+📁 加载数据集...
+📊 数据集统计:
+  训练集: 28,709 images
+  验证集: 7,178 images
+  类别: ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
+📈 类别权重:
+  angry: 1.027
+  disgust: 9.407
+  fear: 1.001
+  happy: 0.568
+  neutral: 0.826
+  sad: 0.849
+  surprise: 1.293
+
+⚖️  手动调整disgust权重:
+  原始: 9.407 → 目标: 3.0
+  调整后disgust权重: 3.000
+🔄 创建模型: vit_base_patch16_224
+📥 加载预训练权重: ./weights/vit_base_patch16_224.pth
+⚠️  缺失的键: 2个
+✅ 预训练权重加载成功
+  ⚖️  weight_decay调整: 0.05 → 0.01
+
+🔄 从检查点恢复训练: best_model_80_target.pth
+✅ 模型权重加载成功
+✅ 优化器状态加载成功
+📊 检查点最佳准确率: 73.06% (Epoch 50)
+🔄 将从第 50 轮继续训练
+✅ 学习率调度器状态加载成功
+
+🚀 开始训练循环 (目标: 80.0%)
+============================================================
+Epoch  51: 100%|██████████| 1794/1794 [03:59<00:00,  7.49it/s, Loss=0.8256, Acc=74.00%, LR=4.91e-05, Aug=44.6%/25.6%/29.8%]
+
+📊 Epoch 51 增强统计:
+  cutmix: 799/1794 (44.5%)
+  mixup: 460/1794 (25.6%)
+  medium: 535/1794 (29.8%)
+                                                         
+📊 Epoch  51/100
+  Training Loss: 0.8250 | Training Accuracy:  74.02%
+  Validation Loss: 1.1053 | Validation Accuracy:  71.54%
+  Learning Rate: 4.91e-05 | Time: 258.6s
+  📈 Per-class Accuracy:
+    angry:  65.76% 
+    disgust:  69.37% 
+    fear:  56.25% 
+    happy:  89.46% 
+    neutral:  72.75% 
+    sad:  53.17% 
+    surprise:  84.84% 
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  52: 100%|██████████| 1794/1794 [03:51<00:00,  7.76it/s, Loss=0.8632, Acc=71.74%, LR=4.88e-05, Aug=46.4%/23.9%/29.8%]
+
+📊 Epoch 52 增强统计:
+  cutmix: 831/1794 (46.3%)
+  mixup: 429/1794 (23.9%)
+  medium: 534/1794 (29.8%)
+                                                         
+📊 Epoch  52/100
+  Training Loss: 0.8631 | Training Accuracy:  71.75%
+  Validation Loss: 1.0946 | Validation Accuracy:  72.16%
+  Learning Rate: 4.88e-05 | Time: 250.5s
+  📈 Per-class Accuracy:
+    angry:  68.16% ↑
+    disgust:  68.47% →
+    fear:  53.52% ↓
+    happy:  89.85% →
+    neutral:  76.16% ↑
+    sad:  54.13% →
+    surprise:  83.63% ↓
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  53: 100%|██████████| 1794/1794 [03:51<00:00,  7.75it/s, Loss=0.8392, Acc=72.80%, LR=4.85e-05, Aug=42.1%/26.1%/31.8%]
+
+📊 Epoch 53 增强统计:
+  cutmix: 753/1794 (42.0%)
+  mixup: 469/1794 (26.1%)
+  medium: 572/1794 (31.9%)
+                                                         
+📊 Epoch  53/100
+  Training Loss: 0.8390 | Training Accuracy:  72.81%
+  Validation Loss: 1.1341 | Validation Accuracy:  70.81%
+  Learning Rate: 4.85e-05 | Time: 250.7s
+  📈 Per-class Accuracy:
+    angry:  59.50% ↓
+    disgust:  66.67% ↓
+    fear:  46.00% ↓
+    happy:  86.92% ↓
+    neutral:  73.32% ↓
+    sad:  64.47% ↑
+    surprise:  86.40% ↑
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  54: 100%|██████████| 1794/1794 [04:01<00:00,  7.43it/s, Loss=0.8514, Acc=72.34%, LR=4.81e-05, Aug=46.5%/24.3%/29.2%]
+
+📊 Epoch 54 增强统计:
+  cutmix: 835/1794 (46.5%)
+  mixup: 435/1794 (24.2%)
+  medium: 524/1794 (29.2%)
+                                                         
+📊 Epoch  54/100
+  Training Loss: 0.8515 | Training Accuracy:  72.32%
+  Validation Loss: 1.1078 | Validation Accuracy:  71.38%
+  Learning Rate: 4.81e-05 | Time: 260.4s
+  📈 Per-class Accuracy:
+    angry:  72.13% ↑
+    disgust:  66.67% →
+    fear:  55.86% ↑
+    happy:  87.99% ↑
+    neutral:  69.26% ↓
+    sad:  52.77% ↓
+    surprise:  85.92% →
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  55: 100%|██████████| 1794/1794 [03:49<00:00,  7.80it/s, Loss=0.8459, Acc=72.77%, LR=4.77e-05, Aug=45.8%/24.4%/29.9%]
+
+📊 Epoch 55 增强统计:
+  cutmix: 822/1794 (45.8%)
+  mixup: 437/1794 (24.4%)
+  medium: 535/1794 (29.8%)
+                                                         
+📊 Epoch  55/100
+  Training Loss: 0.8464 | Training Accuracy:  72.73%
+  Validation Loss: 1.0873 | Validation Accuracy:  71.01%
+  Learning Rate: 4.77e-05 | Time: 249.1s
+  📈 Per-class Accuracy:
+    angry:  68.37% ↓
+    disgust:  71.17% ↑
+    fear:  53.71% ↓
+    happy:  90.30% ↑
+    neutral:  72.42% ↑
+    sad:  48.44% ↓
+    surprise:  85.92% →
+  ⚖️  Dynamic weight adjustment completed
+  💾 Checkpoint saved: checkpoint_epoch_055.pth
+------------------------------------------------------------
+Epoch  56: 100%|██████████| 1794/1794 [03:56<00:00,  7.57it/s, Loss=0.8295, Acc=73.38%, LR=4.73e-05, Aug=45.1%/24.8%/30.1%]
+
+📊 Epoch 56 增强统计:
+  cutmix: 809/1794 (45.1%)
+  mixup: 444/1794 (24.7%)
+  medium: 541/1794 (30.2%)
+                                                         
+📊 Epoch  56/100
+  Training Loss: 0.8299 | Training Accuracy:  73.36%
+  Validation Loss: 1.1069 | Validation Accuracy:  71.47%
+  Learning Rate: 4.73e-05 | Time: 256.1s
+  📈 Per-class Accuracy:
+    angry:  66.91% ↓
+    disgust:  64.86% ↓
+    fear:  56.74% ↑
+    happy:  90.59% →
+    neutral:  73.40% →
+    sad:  51.24% ↑
+    surprise:  82.43% ↓
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  57: 100%|██████████| 1794/1794 [03:50<00:00,  7.79it/s, Loss=0.8223, Acc=74.36%, LR=4.68e-05, Aug=45.2%/24.6%/30.2%]
+
+📊 Epoch 57 增强统计:
+  cutmix: 810/1794 (45.2%)
+  mixup: 442/1794 (24.6%)
+  medium: 542/1794 (30.2%)
+                                                         
+📊 Epoch  57/100
+  Training Loss: 0.8218 | Training Accuracy:  74.39%
+  Validation Loss: 1.1279 | Validation Accuracy:  71.91%
+  Learning Rate: 4.68e-05 | Time: 249.4s
+  📈 Per-class Accuracy:
+    angry:  70.88% ↑
+    disgust:  67.57% ↑
+    fear:  51.17% ↓
+    happy:  92.33% ↑
+    neutral:  65.29% ↓
+    sad:  60.71% ↑
+    surprise:  82.31% →
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  58: 100%|██████████| 1794/1794 [03:59<00:00,  7.50it/s, Loss=0.8393, Acc=73.00%, LR=4.63e-05, Aug=45.9%/24.8%/29.3%]%]
+
+📊 Epoch 58 增强统计:
+  cutmix: 826/1794 (46.0%)
+  mixup: 444/1794 (24.7%)
+  medium: 524/1794 (29.2%)
+                                                         
+📊 Epoch  58/100
+  Training Loss: 0.8394 | Training Accuracy:  73.00%
+  Validation Loss: 1.1210 | Validation Accuracy:  70.72%
+  Learning Rate: 4.63e-05 | Time: 258.3s
+  📈 Per-class Accuracy:
+    angry:  61.90% ↓
+    disgust:  67.57% →
+    fear:  49.51% ↓
+    happy:  88.90% ↓
+    neutral:  67.32% ↑
+    sad:  65.20% ↑
+    surprise:  81.95% →
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  59: 100%|██████████| 1794/1794 [03:50<00:00,  7.77it/s, Loss=0.8223, Acc=73.94%, LR=4.58e-05, Aug=42.7%/25.6%/31.7%]
+
+📊 Epoch 59 增强统计:
+  cutmix: 766/1794 (42.7%)
+  mixup: 460/1794 (25.6%)
+  medium: 568/1794 (31.7%)
+                                                         
+📊 Epoch  59/100
+  Training Loss: 0.8223 | Training Accuracy:  73.95%
+  Validation Loss: 1.0986 | Validation Accuracy:  72.26%
+  Learning Rate: 4.58e-05 | Time: 250.1s
+  📈 Per-class Accuracy:
+    angry:  71.71% ↑
+    disgust:  67.57% →
+    fear:  54.00% ↑
+    happy:  88.61% →
+    neutral:  73.48% ↑
+    sad:  56.86% ↓
+    surprise:  82.43% →
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  60: 100%|██████████| 1794/1794 [03:51<00:00,  7.75it/s, Loss=0.8149, Acc=74.57%, LR=4.52e-05, Aug=45.9%/25.0%/29.1%]
+
+📊 Epoch 60 增强统计:
+  cutmix: 823/1794 (45.9%)
+  mixup: 450/1794 (25.1%)
+  medium: 521/1794 (29.0%)
+                                                         
+📊 Epoch  60/100
+  Training Loss: 0.8148 | Training Accuracy:  74.57%
+  Validation Loss: 1.0900 | Validation Accuracy:  72.21%
+  Learning Rate: 4.52e-05 | Time: 250.6s
+  📈 Per-class Accuracy:
+    angry:  63.15% ↓
+    disgust:  70.27% ↑
+    fear:  51.56% ↓
+    happy:  91.21% ↑
+    neutral:  69.51% ↓
+    sad:  66.16% ↑
+    surprise:  80.87% ↓
+  ⚖️  Dynamic weight adjustment completed
+  💾 Checkpoint saved: checkpoint_epoch_060.pth
+------------------------------------------------------------
+Epoch  61: 100%|██████████| 1794/1794 [03:51<00:00,  7.76it/s, Loss=0.8159, Acc=74.26%, LR=4.46e-05, Aug=45.0%/24.8%/30.2%]
+
+📊 Epoch 61 增强统计:
+  cutmix: 808/1794 (45.0%)
+  mixup: 444/1794 (24.7%)
+  medium: 542/1794 (30.2%)
+                                                         
+📊 Epoch  61/100
+  Training Loss: 0.8158 | Training Accuracy:  74.28%
+  Validation Loss: 1.2127 | Validation Accuracy:  70.88%
+  Learning Rate: 4.46e-05 | Time: 250.5s
+  📈 Per-class Accuracy:
+    angry:  67.64% ↑
+    disgust:  64.86% ↓
+    fear:  58.89% ↑
+    happy:  91.15% →
+    neutral:  64.88% ↓
+    sad:  56.62% ↓
+    surprise:  77.26% ↓
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  62: 100%|██████████| 1794/1794 [03:51<00:00,  7.77it/s, Loss=0.8087, Acc=74.87%, LR=4.40e-05, Aug=43.9%/25.9%/30.2%]
+
+📊 Epoch 62 增强统计:
+  cutmix: 788/1794 (43.9%)
+  mixup: 465/1794 (25.9%)
+  medium: 541/1794 (30.2%)
+                                                         
+📊 Epoch  62/100
+  Training Loss: 0.8089 | Training Accuracy:  74.86%
+  Validation Loss: 1.1025 | Validation Accuracy:  70.62%
+  Learning Rate: 4.40e-05 | Time: 250.2s
+  📈 Per-class Accuracy:
+    angry:  68.68% ↑
+    disgust:  69.37% ↑
+    fear:  55.18% ↓
+    happy:  87.94% ↓
+    neutral:  63.67% ↓
+    sad:  59.90% ↑
+    surprise:  81.47% ↑
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  63: 100%|██████████| 1794/1794 [04:00<00:00,  7.47it/s, Loss=0.8085, Acc=74.66%, LR=4.34e-05, Aug=47.4%/25.2%/27.4%]
+
+📊 Epoch 63 增强统计:
+  cutmix: 851/1794 (47.4%)
+  mixup: 452/1794 (25.2%)
+  medium: 491/1794 (27.4%)
+                                                         
+📊 Epoch  63/100
+  Training Loss: 0.8090 | Training Accuracy:  74.64%
+  Validation Loss: 1.1522 | Validation Accuracy:  71.29%
+  Learning Rate: 4.34e-05 | Time: 259.4s
+  📈 Per-class Accuracy:
+    angry:  64.61% ↓
+    disgust:  63.96% ↓
+    fear:  49.80% ↓
+    happy:  89.01% ↑
+    neutral:  67.64% ↑
+    sad:  65.36% ↑
+    surprise:  82.91% ↑
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  64: 100%|██████████| 1794/1794 [03:51<00:00,  7.74it/s, Loss=0.7918, Acc=75.63%, LR=4.27e-05, Aug=45.1%/25.4%/29.5%]
+
+📊 Epoch 64 增强统计:
+  cutmix: 808/1794 (45.0%)
+  mixup: 455/1794 (25.4%)
+  medium: 531/1794 (29.6%)
+                                                         
+📊 Epoch  64/100
+  Training Loss: 0.7923 | Training Accuracy:  75.61%
+  Validation Loss: 1.1782 | Validation Accuracy:  72.01%
+  Learning Rate: 4.27e-05 | Time: 250.9s
+  📈 Per-class Accuracy:
+    angry:  67.75% ↑
+    disgust:  68.47% ↑
+    fear:  50.39% →
+    happy:  90.76% ↑
+    neutral:  68.45% →
+    sad:  63.03% ↓
+    surprise:  82.79% →
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  65: 100%|██████████| 1794/1794 [03:51<00:00,  7.76it/s, Loss=0.8028, Acc=74.93%, LR=4.20e-05, Aug=44.9%/24.6%/30.6%]
+
+📊 Epoch 65 增强统计:
+  cutmix: 804/1794 (44.8%)
+  mixup: 441/1794 (24.6%)
+  medium: 549/1794 (30.6%)
+                                                         
+📊 Epoch  65/100
+  Training Loss: 0.8032 | Training Accuracy:  74.91%
+  Validation Loss: 1.1249 | Validation Accuracy:  71.96%
+  Learning Rate: 4.20e-05 | Time: 250.4s
+  📈 Per-class Accuracy:
+    angry:  65.66% ↓
+    disgust:  67.57% →
+    fear:  54.30% ↑
+    happy:  91.88% ↑
+    neutral:  71.05% ↑
+    sad:  56.54% ↓
+    surprise:  83.51% →
+  ⚖️  Dynamic weight adjustment completed
+  💾 Checkpoint saved: checkpoint_epoch_065.pth
+------------------------------------------------------------
+Epoch  66: 100%|██████████| 1794/1794 [03:49<00:00,  7.81it/s, Loss=0.7982, Acc=75.41%, LR=4.12e-05, Aug=46.7%/24.5%/28.8%]
+
+📊 Epoch 66 增强统计:
+  cutmix: 836/1794 (46.6%)
+  mixup: 440/1794 (24.5%)
+  medium: 518/1794 (28.9%)
+                                                         s]
+📊 Epoch  66/100
+  Training Loss: 0.7979 | Training Accuracy:  75.41%
+  Validation Loss: 1.1762 | Validation Accuracy:  71.75%
+  Learning Rate: 4.12e-05 | Time: 248.7s
+  📈 Per-class Accuracy:
+    angry:  63.47% ↓
+    disgust:  65.77% ↓
+    fear:  56.05% ↑
+    happy:  90.87% ↓
+    neutral:  73.97% ↑
+    sad:  56.46% →
+    surprise:  80.26% ↓
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  67: 100%|██████████| 1794/1794 [03:48<00:00,  7.86it/s, Loss=0.7929, Acc=75.56%, LR=4.05e-05, Aug=45.5%/26.8%/27.7%]
+
+📊 Epoch 67 增强统计:
+  cutmix: 818/1794 (45.6%)
+  mixup: 480/1794 (26.8%)
+  medium: 496/1794 (27.6%)
+                                                         
+📊 Epoch  67/100
+  Training Loss: 0.7934 | Training Accuracy:  75.53%
+  Validation Loss: 1.1795 | Validation Accuracy:  71.66%
+  Learning Rate: 4.05e-05 | Time: 247.3s
+  📈 Per-class Accuracy:
+    angry:  72.44% ↑
+    disgust:  67.57% ↑
+    fear:  52.25% ↓
+    happy:  87.20% ↓
+    neutral:  76.64% ↑
+    sad:  51.80% ↓
+    surprise:  84.48% ↑
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  68: 100%|██████████| 1794/1794 [03:53<00:00,  7.69it/s, Loss=0.7866, Acc=75.81%, LR=3.97e-05, Aug=43.5%/25.5%/31.1%]
+
+📊 Epoch 68 增强统计:
+  cutmix: 779/1794 (43.4%)
+  mixup: 456/1794 (25.4%)
+  medium: 559/1794 (31.2%)
+                                                         
+📊 Epoch  68/100
+  Training Loss: 0.7868 | Training Accuracy:  75.81%
+  Validation Loss: 1.1122 | Validation Accuracy:  71.76%
+  Learning Rate: 3.97e-05 | Time: 259.8s
+  📈 Per-class Accuracy:
+    angry:  68.48% ↓
+    disgust:  68.47% →
+    fear:  57.13% ↑
+    happy:  89.63% ↑
+    neutral:  69.67% ↓
+    sad:  56.46% ↑
+    surprise:  81.95% ↓
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  69: 100%|██████████| 1794/1794 [03:56<00:00,  7.59it/s, Loss=0.7747, Acc=76.51%, LR=3.89e-05, Aug=44.1%/25.5%/30.4%]%]
+
+📊 Epoch 69 增强统计:
+  cutmix: 791/1794 (44.1%)
+  mixup: 459/1794 (25.6%)
+  medium: 544/1794 (30.3%)
+                                                         
+📊 Epoch  69/100
+  Training Loss: 0.7745 | Training Accuracy:  76.53%
+  Validation Loss: 1.1541 | Validation Accuracy:  71.69%
+  Learning Rate: 3.89e-05 | Time: 259.3s
+  📈 Per-class Accuracy:
+    angry:  69.94% ↑
+    disgust:  69.37% →
+    fear:  58.79% ↑
+    happy:  91.71% ↑
+    neutral:  74.45% ↑
+    sad:  48.44% ↓
+    surprise:  77.98% ↓
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  70: 100%|██████████| 1794/1794 [03:50<00:00,  7.78it/s, Loss=0.7815, Acc=76.34%, LR=3.81e-05, Aug=45.1%/25.1%/29.8%]%]
+
+📊 Epoch 70 增强统计:
+  cutmix: 807/1794 (45.0%)
+  mixup: 450/1794 (25.1%)
+  medium: 537/1794 (29.9%)
+                                                         
+📊 Epoch  70/100
+  Training Loss: 0.7812 | Training Accuracy:  76.36%
+  Validation Loss: 1.1202 | Validation Accuracy:  71.54%
+  Learning Rate: 3.81e-05 | Time: 249.7s
+  📈 Per-class Accuracy:
+    angry:  70.35% →
+    disgust:  64.86% ↓
+    fear:  53.12% ↓
+    happy:  89.12% ↓
+    neutral:  71.45% ↓
+    sad:  53.01% ↑
+    surprise:  86.88% ↑
+  ⚖️  Dynamic weight adjustment completed
+  💾 Checkpoint saved: checkpoint_epoch_070.pth
+------------------------------------------------------------
+Epoch  71: 100%|██████████| 1794/1794 [03:50<00:00,  7.77it/s, Loss=0.7741, Acc=76.38%, LR=3.72e-05, Aug=42.1%/26.5%/31.5%]%]
+
+📊 Epoch 71 增强统计:
+  cutmix: 754/1794 (42.0%)
+  mixup: 476/1794 (26.5%)
+  medium: 564/1794 (31.4%)
+                                                         
+📊 Epoch  71/100
+  Training Loss: 0.7739 | Training Accuracy:  76.38%
+  Validation Loss: 1.1367 | Validation Accuracy:  71.11%
+  Learning Rate: 3.72e-05 | Time: 250.2s
+  📈 Per-class Accuracy:
+    angry:  64.30% ↓
+    disgust:  65.77% →
+    fear:  56.05% ↑
+    happy:  92.50% ↑
+    neutral:  65.77% ↓
+    sad:  55.81% ↑
+    surprise:  83.39% ↓
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  72: 100%|██████████| 1794/1794 [03:51<00:00,  7.76it/s, Loss=0.7765, Acc=76.32%, LR=3.64e-05, Aug=45.8%/25.3%/28.9%]
+
+📊 Epoch 72 增强统计:
+  cutmix: 822/1794 (45.8%)
+  mixup: 454/1794 (25.3%)
+  medium: 518/1794 (28.9%)
+                                                         
+📊 Epoch  72/100
+  Training Loss: 0.7768 | Training Accuracy:  76.31%
+  Validation Loss: 1.1155 | Validation Accuracy:  71.33%
+  Learning Rate: 3.63e-05 | Time: 250.4s
+  📈 Per-class Accuracy:
+    angry:  66.08% ↑
+    disgust:  68.47% ↑
+    fear:  55.08% →
+    happy:  88.61% ↓
+    neutral:  71.13% ↑
+    sad:  54.29% ↓
+    surprise:  86.76% ↑
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  73: 100%|██████████| 1794/1794 [03:51<00:00,  7.75it/s, Loss=0.7756, Acc=76.64%, LR=3.55e-05, Aug=45.8%/24.4%/29.9%]%]
+
+📊 Epoch 73 增强统计:
+  cutmix: 820/1794 (45.7%)
+  mixup: 438/1794 (24.4%)
+  medium: 536/1794 (29.9%)
+                                                         
+📊 Epoch  73/100
+  Training Loss: 0.7757 | Training Accuracy:  76.64%
+  Validation Loss: 1.1763 | Validation Accuracy:  71.26%
+  Learning Rate: 3.55e-05 | Time: 250.6s
+  📈 Per-class Accuracy:
+    angry:  66.28% →
+    disgust:  63.96% ↓
+    fear:  49.71% ↓
+    happy:  89.52% →
+    neutral:  72.10% →
+    sad:  57.02% ↑
+    surprise:  85.68% ↓
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  74: 100%|██████████| 1794/1794 [03:51<00:00,  7.75it/s, Loss=0.7618, Acc=76.90%, LR=3.46e-05, Aug=44.4%/25.5%/30.1%]%]
+
+📊 Epoch 74 增强统计:
+  cutmix: 796/1794 (44.4%)
+  mixup: 458/1794 (25.5%)
+  medium: 540/1794 (30.1%)
+                                                         
+📊 Epoch  74/100
+  Training Loss: 0.7617 | Training Accuracy:  76.92%
+  Validation Loss: 1.1330 | Validation Accuracy:  71.25%
+  Learning Rate: 3.46e-05 | Time: 250.7s
+  📈 Per-class Accuracy:
+    angry:  62.94% ↓
+    disgust:  67.57% ↑
+    fear:  57.52% ↑
+    happy:  87.88% ↓
+    neutral:  73.56% ↑
+    sad:  56.70% →
+    surprise:  81.11% ↓
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  75: 100%|██████████| 1794/1794 [03:51<00:00,  7.75it/s, Loss=0.7671, Acc=76.76%, LR=3.37e-05, Aug=44.2%/25.0%/30.7%]%]
+
+📊 Epoch 75 增强统计:
+  cutmix: 792/1794 (44.1%)
+  mixup: 451/1794 (25.1%)
+  medium: 551/1794 (30.7%)
+                                                         
+📊 Epoch  75/100
+  Training Loss: 0.7674 | Training Accuracy:  76.74%
+  Validation Loss: 1.1981 | Validation Accuracy:  71.29%
+  Learning Rate: 3.37e-05 | Time: 250.6s
+  📈 Per-class Accuracy:
+    angry:  63.88% →
+    disgust:  65.77% ↓
+    fear:  56.64% →
+    happy:  88.28% →
+    neutral:  71.70% ↓
+    sad:  57.74% ↑
+    surprise:  82.07% →
+  ⚖️  Dynamic weight adjustment completed
+  💾 Checkpoint saved: checkpoint_epoch_075.pth
+------------------------------------------------------------
+Epoch  76: 100%|██████████| 1794/1794 [03:50<00:00,  7.77it/s, Loss=0.7485, Acc=77.72%, LR=3.27e-05, Aug=42.6%/25.8%/31.6%]
+
+📊 Epoch 76 增强统计:
+  cutmix: 764/1794 (42.6%)
+  mixup: 463/1794 (25.8%)
+  medium: 567/1794 (31.6%)
+                                                         
+📊 Epoch  76/100
+  Training Loss: 0.7485 | Training Accuracy:  77.71%
+  Validation Loss: 1.1421 | Validation Accuracy:  71.65%
+  Learning Rate: 3.27e-05 | Time: 249.9s
+  📈 Per-class Accuracy:
+    angry:  68.58% ↑
+    disgust:  68.47% ↑
+    fear:  51.66% ↓
+    happy:  90.70% ↑
+    neutral:  72.91% ↑
+    sad:  53.17% ↓
+    surprise:  85.44% ↑
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  77: 100%|██████████| 1794/1794 [03:51<00:00,  7.74it/s, Loss=0.7486, Acc=77.82%, LR=3.18e-05, Aug=44.6%/26.1%/29.3%]
+
+📊 Epoch 77 增强统计:
+  cutmix: 800/1794 (44.6%)
+  mixup: 469/1794 (26.1%)
+  medium: 525/1794 (29.3%)
+                                                         
+📊 Epoch  77/100
+  Training Loss: 0.7488 | Training Accuracy:  77.80%
+  Validation Loss: 1.1978 | Validation Accuracy:  71.44%
+  Learning Rate: 3.18e-05 | Time: 250.8s
+  📈 Per-class Accuracy:
+    angry:  62.53% ↓
+    disgust:  65.77% ↓
+    fear:  52.44% →
+    happy:  89.23% ↓
+    neutral:  75.91% ↑
+    sad:  56.70% ↑
+    surprise:  83.39% ↓
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  78: 100%|██████████| 1794/1794 [03:51<00:00,  7.74it/s, Loss=0.7406, Acc=78.48%, LR=3.08e-05, Aug=43.1%/25.9%/31.1%]
+
+📊 Epoch 78 增强统计:
+  cutmix: 774/1794 (43.1%)
+  mixup: 463/1794 (25.8%)
+  medium: 557/1794 (31.0%)
+                                                         
+📊 Epoch  78/100
+  Training Loss: 0.7407 | Training Accuracy:  78.48%
+  Validation Loss: 1.1578 | Validation Accuracy:  71.29%
+  Learning Rate: 3.08e-05 | Time: 251.1s
+  📈 Per-class Accuracy:
+    angry:  64.61% ↑
+    disgust:  64.86% →
+    fear:  52.64% →
+    happy:  89.57% →
+    neutral:  70.07% ↓
+    sad:  59.42% ↑
+    surprise:  83.39% →
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  79: 100%|██████████| 1794/1794 [03:51<00:00,  7.74it/s, Loss=0.7416, Acc=78.22%, LR=2.99e-05, Aug=45.6%/24.5%/29.9%]
+
+📊 Epoch 79 增强统计:
+  cutmix: 818/1794 (45.6%)
+  mixup: 440/1794 (24.5%)
+  medium: 536/1794 (29.9%)
+                                                         
+📊 Epoch  79/100
+  Training Loss: 0.7415 | Training Accuracy:  78.24%
+  Validation Loss: 1.1579 | Validation Accuracy:  71.34%
+  Learning Rate: 2.99e-05 | Time: 251.2s
+  📈 Per-class Accuracy:
+    angry:  67.33% ↑
+    disgust:  68.47% ↑
+    fear:  59.47% ↑
+    happy:  90.59% ↑
+    neutral:  70.07% →
+    sad:  49.80% ↓
+    surprise:  84.12% →
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  80: 100%|██████████| 1794/1794 [03:51<00:00,  7.74it/s, Loss=0.7333, Acc=78.69%, LR=2.89e-05, Aug=44.6%/25.6%/29.8%]
+
+📊 Epoch 80 增强统计:
+  cutmix: 801/1794 (44.6%)
+  mixup: 459/1794 (25.6%)
+  medium: 534/1794 (29.8%)
+                                                         
+📊 Epoch  80/100
+  Training Loss: 0.7333 | Training Accuracy:  78.70%
+  Validation Loss: 1.1443 | Validation Accuracy:  71.20%
+  Learning Rate: 2.89e-05 | Time: 251.0s
+  📈 Per-class Accuracy:
+    angry:  64.20% ↓
+    disgust:  65.77% ↓
+    fear:  51.66% ↓
+    happy:  89.18% ↓
+    neutral:  68.53% ↓
+    sad:  63.99% ↑
+    surprise:  80.51% ↓
+  ⚖️  Dynamic weight adjustment completed
+  💾 Checkpoint saved: checkpoint_epoch_080.pth
+------------------------------------------------------------
+Epoch  81: 100%|██████████| 1794/1794 [03:49<00:00,  7.80it/s, Loss=0.7340, Acc=78.50%, LR=2.79e-05, Aug=44.2%/25.3%/30.6%]
+
+📊 Epoch 81 增强统计:
+  cutmix: 794/1794 (44.3%)
+  mixup: 453/1794 (25.3%)
+  medium: 547/1794 (30.5%)
+                                                         
+📊 Epoch  81/100
+  Training Loss: 0.7341 | Training Accuracy:  78.51%
+  Validation Loss: 1.1478 | Validation Accuracy:  71.68%
+  Learning Rate: 2.79e-05 | Time: 248.9s
+  📈 Per-class Accuracy:
+    angry:  68.79% ↑
+    disgust:  66.67% →
+    fear:  51.86% →
+    happy:  90.19% ↑
+    neutral:  71.05% ↑
+    sad:  58.54% ↓
+    surprise:  81.23% →
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  82: 100%|██████████| 1794/1794 [03:50<00:00,  7.80it/s, Loss=0.7241, Acc=79.23%, LR=2.70e-05, Aug=44.5%/25.3%/30.2%]
+
+📊 Epoch 82 增强统计:
+  cutmix: 801/1794 (44.6%)
+  mixup: 452/1794 (25.2%)
+  medium: 541/1794 (30.2%)
+                                                         
+📊 Epoch  82/100
+  Training Loss: 0.7248 | Training Accuracy:  79.19%
+  Validation Loss: 1.1627 | Validation Accuracy:  72.16%
+  Learning Rate: 2.70e-05 | Time: 249.2s
+  📈 Per-class Accuracy:
+    angry:  60.33% ↓
+    disgust:  68.47% ↑
+    fear:  56.74% ↑
+    happy:  89.74% →
+    neutral:  75.10% ↑
+    sad:  58.86% →
+    surprise:  83.39% ↑
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  83: 100%|██████████| 1794/1794 [03:49<00:00,  7.80it/s, Loss=0.7213, Acc=79.27%, LR=2.60e-05, Aug=44.7%/24.9%/30.4%]%]]
+
+📊 Epoch 83 增强统计:
+  cutmix: 804/1794 (44.8%)
+  mixup: 446/1794 (24.9%)
+  medium: 544/1794 (30.3%)
+                                                         
+📊 Epoch  83/100
+  Training Loss: 0.7214 | Training Accuracy:  79.27%
+  Validation Loss: 1.1375 | Validation Accuracy:  71.94%
+  Learning Rate: 2.60e-05 | Time: 248.9s
+  📈 Per-class Accuracy:
+    angry:  65.14% ↑
+    disgust:  64.86% ↓
+    fear:  55.37% ↓
+    happy:  91.04% ↑
+    neutral:  70.64% ↓
+    sad:  58.30% →
+    surprise:  82.79% →
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  84: 100%|██████████| 1794/1794 [03:59<00:00,  7.50it/s, Loss=0.7057, Acc=80.08%, LR=2.50e-05, Aug=44.5%/26.3%/29.3%]
+
+📊 Epoch 84 增强统计:
+  cutmix: 796/1794 (44.4%)
+  mixup: 470/1794 (26.2%)
+  medium: 528/1794 (29.4%)
+                                                         
+📊 Epoch  84/100
+  Training Loss: 0.7056 | Training Accuracy:  80.08%
+  Validation Loss: 1.1558 | Validation Accuracy:  71.84%
+  Learning Rate: 2.50e-05 | Time: 258.4s
+  📈 Per-class Accuracy:
+    angry:  64.72% →
+    disgust:  66.67% ↑
+    fear:  55.27% →
+    happy:  91.77% →
+    neutral:  66.10% ↓
+    sad:  61.27% ↑
+    surprise:  83.03% →
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  85: 100%|██████████| 1794/1794 [03:50<00:00,  7.79it/s, Loss=0.7199, Acc=79.18%, LR=2.40e-05, Aug=46.9%/24.3%/28.8%]
+
+📊 Epoch 85 增强统计:
+  cutmix: 843/1794 (47.0%)
+  mixup: 435/1794 (24.2%)
+  medium: 516/1794 (28.8%)
+                                                         
+📊 Epoch  85/100
+  Training Loss: 0.7199 | Training Accuracy:  79.17%
+  Validation Loss: 1.1476 | Validation Accuracy:  71.02%
+  Learning Rate: 2.40e-05 | Time: 249.3s
+  📈 Per-class Accuracy:
+    angry:  67.64% ↑
+    disgust:  68.47% ↑
+    fear:  54.88% →
+    happy:  91.04% →
+    neutral:  70.15% ↑
+    sad:  54.37% ↓
+    surprise:  78.70% ↓
+  ⚖️  Dynamic weight adjustment completed
+  💾 Checkpoint saved: checkpoint_epoch_085.pth
+------------------------------------------------------------
+Epoch  86: 100%|██████████| 1794/1794 [03:51<00:00,  7.76it/s, Loss=0.6950, Acc=80.39%, LR=2.30e-05, Aug=44.9%/25.6%/29.5%]%]
+
+📊 Epoch 86 增强统计:
+  cutmix: 803/1794 (44.8%)
+  mixup: 460/1794 (25.6%)
+  medium: 531/1794 (29.6%)
+                                                         
+📊 Epoch  86/100
+  Training Loss: 0.6946 | Training Accuracy:  80.40%
+  Validation Loss: 1.1786 | Validation Accuracy:  71.94%
+  Learning Rate: 2.30e-05 | Time: 250.3s
+  📈 Per-class Accuracy:
+    angry:  66.18% ↓
+    disgust:  64.86% ↓
+    fear:  54.10% →
+    happy:  90.81% →
+    neutral:  69.42% →
+    sad:  60.79% ↑
+    surprise:  81.71% ↑
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  87: 100%|██████████| 1794/1794 [03:53<00:00,  7.69it/s, Loss=0.6981, Acc=80.38%, LR=2.21e-05, Aug=46.5%/24.4%/29.1%]
+
+📊 Epoch 87 增强统计:
+  cutmix: 834/1794 (46.5%)
+  mixup: 438/1794 (24.4%)
+  medium: 522/1794 (29.1%)
+                                                         
+📊 Epoch  87/100
+  Training Loss: 0.6976 | Training Accuracy:  80.41%
+  Validation Loss: 1.1885 | Validation Accuracy:  71.37%
+  Learning Rate: 2.21e-05 | Time: 258.6s
+  📈 Per-class Accuracy:
+    angry:  61.69% ↓
+    disgust:  68.47% ↑
+    fear:  55.47% ↑
+    happy:  91.60% →
+    neutral:  67.48% ↓
+    sad:  61.59% →
+    surprise:  79.78% ↓
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  88: 100%|██████████| 1794/1794 [03:50<00:00,  7.78it/s, Loss=0.6995, Acc=80.38%, LR=2.11e-05, Aug=46.9%/23.4%/29.8%]
+
+📊 Epoch 88 增强统计:
+  cutmix: 840/1794 (46.8%)
+  mixup: 420/1794 (23.4%)
+  medium: 534/1794 (29.8%)
+                                                         
+📊 Epoch  88/100
+  Training Loss: 0.6992 | Training Accuracy:  80.39%
+  Validation Loss: 1.1953 | Validation Accuracy:  71.69%
+  Learning Rate: 2.11e-05 | Time: 249.8s
+  📈 Per-class Accuracy:
+    angry:  65.14% ↑
+    disgust:  69.37% →
+    fear:  53.91% ↓
+    happy:  90.59% ↓
+    neutral:  69.26% ↑
+    sad:  59.34% ↓
+    surprise:  83.27% ↑
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  89: 100%|██████████| 1794/1794 [03:50<00:00,  7.77it/s, Loss=0.6840, Acc=81.05%, LR=2.01e-05, Aug=44.9%/26.3%/28.8%]
+
+📊 Epoch 89 增强统计:
+  cutmix: 803/1794 (44.8%)
+  mixup: 472/1794 (26.3%)
+  medium: 519/1794 (28.9%)
+                                                         
+📊 Epoch  89/100
+  Training Loss: 0.6835 | Training Accuracy:  81.08%
+  Validation Loss: 1.1745 | Validation Accuracy:  71.66%
+  Learning Rate: 2.01e-05 | Time: 250.0s
+  📈 Per-class Accuracy:
+    angry:  69.31% ↑
+    disgust:  67.57% ↓
+    fear:  54.10% →
+    happy:  91.54% →
+    neutral:  64.48% ↓
+    sad:  59.98% →
+    surprise:  82.31% →
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  90: 100%|██████████| 1794/1794 [03:50<00:00,  7.78it/s, Loss=0.6890, Acc=80.73%, LR=1.92e-05, Aug=43.6%/26.1%/30.3%]
+
+📊 Epoch 90 增强统计:
+  cutmix: 782/1794 (43.6%)
+  mixup: 468/1794 (26.1%)
+  medium: 544/1794 (30.3%)
+                                                         
+📊 Epoch  90/100
+  Training Loss: 0.6891 | Training Accuracy:  80.73%
+  Validation Loss: 1.1869 | Validation Accuracy:  72.53%
+  Learning Rate: 1.92e-05 | Time: 249.7s
+  📈 Per-class Accuracy:
+    angry:  64.82% ↓
+    disgust:  64.86% ↓
+    fear:  55.66% ↑
+    happy:  90.92% →
+    neutral:  72.59% ↑
+    sad:  58.54% ↓
+    surprise:  84.84% ↑
+  ⚖️  Dynamic weight adjustment completed
+  💾 Checkpoint saved: checkpoint_epoch_090.pth
+------------------------------------------------------------
+Epoch  91: 100%|██████████| 1794/1794 [03:51<00:00,  7.74it/s, Loss=0.6722, Acc=81.37%, LR=1.82e-05, Aug=44.9%/24.8%/30.3%]]
+
+📊 Epoch 91 增强统计:
+  cutmix: 805/1794 (44.9%)
+  mixup: 445/1794 (24.8%)
+  medium: 544/1794 (30.3%)
+                                                         
+📊 Epoch  91/100
+  Training Loss: 0.6723 | Training Accuracy:  81.36%
+  Validation Loss: 1.1881 | Validation Accuracy:  72.15%
+  Learning Rate: 1.82e-05 | Time: 251.1s
+  📈 Per-class Accuracy:
+    angry:  67.85% ↑
+    disgust:  65.77% →
+    fear:  56.05% →
+    happy:  91.09% →
+    neutral:  66.99% ↓
+    sad:  59.98% ↑
+    surprise:  83.27% ↓
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  92: 100%|██████████| 1794/1794 [03:51<00:00,  7.75it/s, Loss=0.6801, Acc=81.19%, LR=1.73e-05, Aug=47.3%/24.5%/28.2%]
+
+📊 Epoch 92 增强统计:
+  cutmix: 848/1794 (47.3%)
+  mixup: 440/1794 (24.5%)
+  medium: 506/1794 (28.2%)
+                                                         
+📊 Epoch  92/100
+  Training Loss: 0.6799 | Training Accuracy:  81.19%
+  Validation Loss: 1.1664 | Validation Accuracy:  71.58%
+  Learning Rate: 1.73e-05 | Time: 250.9s
+  📈 Per-class Accuracy:
+    angry:  63.78% ↓
+    disgust:  68.47% ↑
+    fear:  58.01% ↑
+    happy:  88.61% ↓
+    neutral:  65.53% ↓
+    sad:  62.87% ↑
+    surprise:  83.39% →
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  93: 100%|██████████| 1794/1794 [03:51<00:00,  7.75it/s, Loss=0.6584, Acc=82.24%, LR=1.63e-05, Aug=43.5%/26.1%/30.4%]
+
+📊 Epoch 93 增强统计:
+  cutmix: 781/1794 (43.5%)
+  mixup: 469/1794 (26.1%)
+  medium: 544/1794 (30.3%)
+                                                         
+📊 Epoch  93/100
+  Training Loss: 0.6587 | Training Accuracy:  82.23%
+  Validation Loss: 1.1603 | Validation Accuracy:  72.14%
+  Learning Rate: 1.63e-05 | Time: 250.8s
+  📈 Per-class Accuracy:
+    angry:  68.37% ↑
+    disgust:  67.57% →
+    fear:  54.49% ↓
+    happy:  90.64% ↑
+    neutral:  70.88% ↑
+    sad:  58.06% ↓
+    surprise:  82.31% ↓
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  94: 100%|██████████| 1794/1794 [03:51<00:00,  7.74it/s, Loss=0.6625, Acc=82.05%, LR=1.54e-05, Aug=43.3%/27.7%/29.1%]
+
+📊 Epoch 94 增强统计:
+  cutmix: 776/1794 (43.3%)
+  mixup: 498/1794 (27.8%)
+  medium: 520/1794 (29.0%)
+                                                         
+📊 Epoch  94/100
+  Training Loss: 0.6623 | Training Accuracy:  82.06%
+  Validation Loss: 1.1845 | Validation Accuracy:  71.90%
+  Learning Rate: 1.54e-05 | Time: 250.9s
+  📈 Per-class Accuracy:
+    angry:  68.68% →
+    disgust:  65.77% ↓
+    fear:  51.17% ↓
+    happy:  91.83% ↑
+    neutral:  69.99% →
+    sad:  57.90% →
+    surprise:  83.27% →
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  95: 100%|██████████| 1794/1794 [03:51<00:00,  7.76it/s, Loss=0.6692, Acc=81.60%, LR=1.45e-05, Aug=45.6%/24.7%/29.7%]
+
+📊 Epoch 95 增强统计:
+  cutmix: 818/1794 (45.6%)
+  mixup: 443/1794 (24.7%)
+  medium: 533/1794 (29.7%)
+                                                         
+📊 Epoch  95/100
+  Training Loss: 0.6692 | Training Accuracy:  81.60%
+  Validation Loss: 1.1491 | Validation Accuracy:  72.12%
+  Learning Rate: 1.45e-05 | Time: 250.5s
+  📈 Per-class Accuracy:
+    angry:  68.06% →
+    disgust:  66.67% →
+    fear:  54.79% ↑
+    happy:  90.70% ↓
+    neutral:  75.18% ↑
+    sad:  52.85% ↓
+    surprise:  83.63% →
+  ⚖️  Dynamic weight adjustment completed
+  💾 Checkpoint saved: checkpoint_epoch_095.pth
+------------------------------------------------------------
+Epoch  96: 100%|██████████| 1794/1794 [03:51<00:00,  7.73it/s, Loss=0.6618, Acc=82.10%, LR=1.37e-05, Aug=44.9%/25.4%/29.7%]
+
+📊 Epoch 96 增强统计:
+  cutmix: 804/1794 (44.8%)
+  mixup: 457/1794 (25.5%)
+  medium: 533/1794 (29.7%)
+                                                         
+📊 Epoch  96/100
+  Training Loss: 0.6616 | Training Accuracy:  82.12%
+  Validation Loss: 1.1568 | Validation Accuracy:  72.51%
+  Learning Rate: 1.37e-05 | Time: 251.3s
+  📈 Per-class Accuracy:
+    angry:  68.58% →
+    disgust:  65.77% →
+    fear:  56.05% ↑
+    happy:  92.00% ↑
+    neutral:  68.69% ↓
+    sad:  58.62% ↑
+    surprise:  83.15% →
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  97: 100%|██████████| 1794/1794 [03:52<00:00,  7.73it/s, Loss=0.6646, Acc=82.00%, LR=1.28e-05, Aug=47.3%/23.2%/29.6%]
+
+📊 Epoch 97 增强统计:
+  cutmix: 848/1794 (47.3%)
+  mixup: 416/1794 (23.2%)
+  medium: 530/1794 (29.5%)
+                                                         
+📊 Epoch  97/100
+  Training Loss: 0.6649 | Training Accuracy:  81.99%
+  Validation Loss: 1.1728 | Validation Accuracy:  72.29%
+  Learning Rate: 1.28e-05 | Time: 251.4s
+  📈 Per-class Accuracy:
+    angry:  67.75% →
+    disgust:  66.67% →
+    fear:  53.42% ↓
+    happy:  91.94% →
+    neutral:  68.86% →
+    sad:  61.35% ↑
+    surprise:  81.11% ↓
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  98: 100%|██████████| 1794/1794 [03:52<00:00,  7.73it/s, Loss=0.6547, Acc=82.06%, LR=1.19e-05, Aug=43.7%/23.7%/32.5%]
+
+📊 Epoch 98 增强统计:
+  cutmix: 785/1794 (43.8%)
+  mixup: 426/1794 (23.7%)
+  medium: 583/1794 (32.5%)
+                                                         
+📊 Epoch  98/100
+  Training Loss: 0.6547 | Training Accuracy:  82.07%
+  Validation Loss: 1.1389 | Validation Accuracy:  72.53%
+  Learning Rate: 1.19e-05 | Time: 251.3s
+  📈 Per-class Accuracy:
+    angry:  63.36% ↓
+    disgust:  67.57% →
+    fear:  57.23% ↑
+    happy:  90.36% ↓
+    neutral:  70.80% ↑
+    sad:  61.75% →
+    surprise:  83.27% ↑
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  99: 100%|██████████| 1794/1794 [03:51<00:00,  7.75it/s, Loss=0.6524, Acc=82.41%, LR=1.11e-05, Aug=45.9%/24.1%/30.1%]
+
+📊 Epoch 99 增强统计:
+  cutmix: 822/1794 (45.8%)
+  mixup: 433/1794 (24.1%)
+  medium: 539/1794 (30.0%)
+                                                         
+📊 Epoch  99/100
+  Training Loss: 0.6523 | Training Accuracy:  82.42%
+  Validation Loss: 1.1790 | Validation Accuracy:  73.03%
+  Learning Rate: 1.11e-05 | Time: 250.7s
+  📈 Per-class Accuracy:
+    angry:  66.70% ↑
+    disgust:  67.57% →
+    fear:  55.27% ↓
+    happy:  91.38% ↑
+    neutral:  72.10% ↑
+    sad:  60.14% ↓
+    surprise:  84.48% ↑
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch 100: 100%|██████████| 1794/1794 [03:51<00:00,  7.76it/s, Loss=0.6479, Acc=82.78%, LR=1.03e-05, Aug=45.3%/24.1%/30.7%]
+
+📊 Epoch 100 增强统计:
+  cutmix: 810/1794 (45.2%)
+  mixup: 432/1794 (24.1%)
+  medium: 552/1794 (30.8%)
+                                                         
+📊 Epoch 100/100
+  Training Loss: 0.6476 | Training Accuracy:  82.80%
+  Validation Loss: 1.1613 | Validation Accuracy:  73.07%
+  Learning Rate: 1.03e-05 | Time: 250.2s
+  📈 Per-class Accuracy:
+    angry:  65.55% ↓
+    disgust:  68.47% →
+    fear:  54.79% →
+    happy:  90.70% →
+    neutral:  72.99% →
+    sad:  61.91% ↑
+    surprise:  84.12% →
+  ⚖️  Dynamic weight adjustment completed
+  💾 Checkpoint saved: checkpoint_epoch_100.pth
+------------------------------------------------------------
+
+============================================================
+🎯 训练总结
+============================================================
+📊 Final Best Accuracy: 73.06% (Epoch 50)
+🎯 Target Accuracy: 80.0%
+📈 Difference: +6.94%
+🔄 Total Training Epochs: 100
+🔄 Trained Epochs: 50 (from epoch 50)
+✅ 训练曲线已保存: training_curves_80_target.png/pdf
+
+🔍 最终模型评估...
+✅ Final Best Accuracy: 73.06%
+📊 Per-class Accuracy:
+  angry:  69.94%
+  disgust:  69.37%
+  fear:  54.20%
+  happy:  92.11%
+  neutral:  71.53%
+  sad:  61.51%
+  surprise:  79.30%
+📈 Average Class Accuracy: 71.14%
+✅ Excellent! Accuracy > 73%

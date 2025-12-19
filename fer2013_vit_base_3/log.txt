@@ -1,0 +1,387 @@
+============================================================
+🎯 3090优化训练配置 (内存<18GB)
+============================================================
+📊 模型: vit_base_patch16_224
+📈 目标准确率: 74.0%
+⚙️  批次大小: 32 (优化前: 16)
+📚 总轮数: 80
+💡 学习率: 2.5e-05
+🔄 热身轮数: 8
+🎨 增强策略: CutMix(0.45), MixUp(0.25)
+⚡ 混合精度训练: 启用
+💻 训练设备: cuda
+📊 GPU显存: 24GB RTX 3090
+============================================================
+
+🚀 开始3090优化训练!
+============================================================
+🎮 GPU: NVIDIA GeForce RTX 3090
+💾 显存: 25.3 GB
+📊 Batch Size: 32
+⚡ 混合精度训练: 启用
+
+📁 加载数据集...
+📊 数据集统计:
+  训练集: 28,709 images
+  验证集: 7,178 images
+  类别: ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
+🔄 创建模型: vit_base_patch16_224
+📥 加载预训练权重: ./weights/vit_base_patch16_224.pth
+⚠️  缺失的键: 2个
+    1. head.weight
+    2. head.bias
+✅ 预训练权重加载成功
+
+🚀 开始训练循环 (目标: 74.0%)
+============================================================
+Epoch   1: 100%|██████████| 897/897 [01:42<00:00,  8.72it/s, Loss=1.5196, Acc=39.28%, LR=2.50e-05]
+
+📊 Epoch 1 增强统计:
+  cutmix: 388/897 (43.3%)
+  mixup: 231/897 (25.8%)
+  medium: 278/897 (31.0%)
+                                                         
+📊 Epoch   1/80
+  Training Loss: 1.5189 | Training Accuracy:  39.34%
+  Validation Loss: 1.2515 | Validation Accuracy:  60.00%
+  Learning Rate: 2.50e-05 | Time: 122.0s
+  🎉 New Best Accuracy: 60.00% (saved to best_model_3090.pth)
+------------------------------------------------------------
+Epoch   2: 100%|██████████| 897/897 [01:43<00:00,  8.66it/s, Loss=1.3346, Acc=49.94%, LR=2.50e-05]05]
+
+📊 Epoch 2 增强统计:
+  cutmix: 411/897 (45.8%)
+  mixup: 229/897 (25.5%)
+  medium: 257/897 (28.7%)
+                                                         
+📊 Epoch   2/80
+  Training Loss: 1.3340 | Training Accuracy:  49.96%
+  Validation Loss: 1.1705 | Validation Accuracy:  63.44%
+  Learning Rate: 2.50e-05 | Time: 125.9s
+  🎉 New Best Accuracy: 63.44% (saved to best_model_3090.pth)
+------------------------------------------------------------
+Epoch   3: 100%|██████████| 897/897 [01:34<00:00,  9.51it/s, Loss=1.2878, Acc=52.09%, LR=2.50e-05]
+
+📊 Epoch 3 增强统计:
+  cutmix: 423/897 (47.2%)
+  mixup: 225/897 (25.1%)
+  medium: 249/897 (27.8%)
+                                                         
+📊 Epoch   3/80
+  Training Loss: 1.2882 | Training Accuracy:  52.04%
+  Validation Loss: 1.1961 | Validation Accuracy:  63.54%
+  Learning Rate: 2.49e-05 | Time: 112.8s
+  🎉 New Best Accuracy: 63.54% (saved to best_model_3090.pth)
+------------------------------------------------------------
+Epoch   4: 100%|██████████| 897/897 [01:45<00:00,  8.48it/s, Loss=1.2565, Acc=53.19%, LR=2.49e-05]
+
+📊 Epoch 4 增强统计:
+  cutmix: 408/897 (45.5%)
+  mixup: 204/897 (22.7%)
+  medium: 285/897 (31.8%)
+                                                         
+📊 Epoch   4/80
+  Training Loss: 1.2555 | Training Accuracy:  53.23%
+  Validation Loss: 1.1154 | Validation Accuracy:  66.45%
+  Learning Rate: 2.48e-05 | Time: 127.2s
+  🎉 New Best Accuracy: 66.45% (saved to best_model_3090.pth)
+------------------------------------------------------------
+Epoch   5: 100%|██████████| 897/897 [01:48<00:00,  8.27it/s, Loss=1.2148, Acc=55.49%, LR=2.48e-05]5]
+
+📊 Epoch 5 增强统计:
+  cutmix: 352/897 (39.2%)
+  mixup: 232/897 (25.9%)
+  medium: 313/897 (34.9%)
+                                                         
+📊 Epoch   5/80
+  Training Loss: 1.2156 | Training Accuracy:  55.49%
+  Validation Loss: 1.1029 | Validation Accuracy:  67.43%
+  Learning Rate: 2.47e-05 | Time: 126.9s
+  🎉 New Best Accuracy: 67.43% (saved to best_model_3090.pth)
+  💾 Checkpoint saved: checkpoint_3090_epoch_005.pth
+------------------------------------------------------------
+Epoch   6: 100%|██████████| 897/897 [01:40<00:00,  8.89it/s, Loss=1.1999, Acc=55.82%, LR=2.47e-05]
+
+📊 Epoch 6 增强统计:
+  cutmix: 401/897 (44.7%)
+  mixup: 237/897 (26.4%)
+  medium: 259/897 (28.9%)
+                                                         
+📊 Epoch   6/80
+  Training Loss: 1.1998 | Training Accuracy:  55.84%
+  Validation Loss: 1.1227 | Validation Accuracy:  67.09%
+  Learning Rate: 2.46e-05 | Time: 119.3s
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch   7: 100%|██████████| 897/897 [01:42<00:00,  8.74it/s, Loss=1.1774, Acc=57.11%, LR=2.46e-05]
+
+📊 Epoch 7 增强统计:
+  cutmix: 399/897 (44.5%)
+  mixup: 221/897 (24.6%)
+  medium: 277/897 (30.9%)
+                                                         
+📊 Epoch   7/80
+  Training Loss: 1.1773 | Training Accuracy:  57.12%
+  Validation Loss: 1.1077 | Validation Accuracy:  69.20%
+  Learning Rate: 2.44e-05 | Time: 122.8s
+  🎉 New Best Accuracy: 69.20% (saved to best_model_3090.pth)
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch   8: 100%|██████████| 897/897 [01:35<00:00,  9.40it/s, Loss=1.1604, Acc=57.76%, LR=2.44e-05]
+
+📊 Epoch 8 增强统计:
+  cutmix: 436/897 (48.6%)
+  mixup: 214/897 (23.9%)
+  medium: 247/897 (27.5%)
+                                                         
+📊 Epoch   8/80
+  Training Loss: 1.1602 | Training Accuracy:  57.78%
+  Validation Loss: 1.0974 | Validation Accuracy:  68.86%
+  Learning Rate: 2.43e-05 | Time: 119.2s
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch   9: 100%|██████████| 897/897 [01:46<00:00,  8.42it/s, Loss=1.1363, Acc=58.67%, LR=2.43e-05]05]
+
+📊 Epoch 9 增强统计:
+  cutmix: 414/897 (46.2%)
+  mixup: 223/897 (24.9%)
+  medium: 260/897 (29.0%)
+                                                         
+📊 Epoch   9/80
+  Training Loss: 1.1365 | Training Accuracy:  58.66%
+  Validation Loss: 1.0637 | Validation Accuracy:  68.38%
+  Learning Rate: 2.41e-05 | Time: 128.0s
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  10: 100%|██████████| 897/897 [01:50<00:00,  8.14it/s, Loss=1.1353, Acc=58.88%, LR=2.41e-05]
+
+📊 Epoch 10 增强统计:
+  cutmix: 408/897 (45.5%)
+  mixup: 214/897 (23.9%)
+  medium: 275/897 (30.7%)
+                                                         
+📊 Epoch  10/80
+  Training Loss: 1.1368 | Training Accuracy:  58.82%
+  Validation Loss: 1.0683 | Validation Accuracy:  67.60%
+  Learning Rate: 2.38e-05 | Time: 132.6s
+  ⚖️  Dynamic weight adjustment completed
+  💾 Checkpoint saved: checkpoint_3090_epoch_010.pth
+------------------------------------------------------------
+Epoch  11: 100%|██████████| 897/897 [01:42<00:00,  8.77it/s, Loss=1.0974, Acc=60.85%, LR=2.38e-05]05]
+
+📊 Epoch 11 增强统计:
+  cutmix: 402/897 (44.8%)
+  mixup: 221/897 (24.6%)
+  medium: 274/897 (30.5%)
+                                                         /s]
+📊 Epoch  11/80
+  Training Loss: 1.0968 | Training Accuracy:  60.87%
+  Validation Loss: 1.0557 | Validation Accuracy:  69.30%
+  Learning Rate: 2.36e-05 | Time: 127.1s
+  🎉 New Best Accuracy: 69.30% (saved to best_model_3090.pth)
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  12: 100%|██████████| 897/897 [01:31<00:00,  9.85it/s, Loss=1.0855, Acc=61.41%, LR=2.36e-05]
+
+📊 Epoch 12 增强统计:
+  cutmix: 407/897 (45.4%)
+  mixup: 223/897 (24.9%)
+  medium: 267/897 (29.8%)
+                                                         
+📊 Epoch  12/80
+  Training Loss: 1.0859 | Training Accuracy:  61.36%
+  Validation Loss: 1.0640 | Validation Accuracy:  69.70%
+  Learning Rate: 2.33e-05 | Time: 114.8s
+  🎉 New Best Accuracy: 69.70% (saved to best_model_3090.pth)
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  13: 100%|██████████| 897/897 [01:33<00:00,  9.57it/s, Loss=1.0707, Acc=61.70%, LR=2.33e-05]
+
+📊 Epoch 13 增强统计:
+  cutmix: 391/897 (43.6%)
+  mixup: 234/897 (26.1%)
+  medium: 272/897 (30.3%)
+                                                         
+📊 Epoch  13/80
+  Training Loss: 1.0708 | Training Accuracy:  61.72%
+  Validation Loss: 1.0502 | Validation Accuracy:  69.62%
+  Learning Rate: 2.31e-05 | Time: 118.1s
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  14: 100%|██████████| 897/897 [01:37<00:00,  9.23it/s, Loss=1.0508, Acc=63.07%, LR=2.31e-05]
+
+📊 Epoch 14 增强统计:
+  cutmix: 419/897 (46.7%)
+  mixup: 208/897 (23.2%)
+  medium: 270/897 (30.1%)
+                                                         
+📊 Epoch  14/80
+  Training Loss: 1.0497 | Training Accuracy:  63.12%
+  Validation Loss: 1.0520 | Validation Accuracy:  70.52%
+  Learning Rate: 2.28e-05 | Time: 115.5s
+  🎉 New Best Accuracy: 70.52% (saved to best_model_3090.pth)
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  15: 100%|██████████| 897/897 [01:44<00:00,  8.59it/s, Loss=1.0504, Acc=63.14%, LR=2.28e-05]
+
+📊 Epoch 15 增强统计:
+  cutmix: 417/897 (46.5%)
+  mixup: 226/897 (25.2%)
+  medium: 254/897 (28.3%)
+                                                         
+📊 Epoch  15/80
+  Training Loss: 1.0506 | Training Accuracy:  63.14%
+  Validation Loss: 1.0533 | Validation Accuracy:  70.58%
+  Learning Rate: 2.24e-05 | Time: 126.9s
+  🎉 New Best Accuracy: 70.58% (saved to best_model_3090.pth)
+  ⚖️  Dynamic weight adjustment completed
+  💾 Checkpoint saved: checkpoint_3090_epoch_015.pth
+------------------------------------------------------------
+Epoch  16: 100%|██████████| 897/897 [01:29<00:00, 10.02it/s, Loss=1.0429, Acc=63.37%, LR=2.24e-05]
+
+📊 Epoch 16 增强统计:
+  cutmix: 409/897 (45.6%)
+  mixup: 218/897 (24.3%)
+  medium: 270/897 (30.1%)
+                                                         
+📊 Epoch  16/80
+  Training Loss: 1.0435 | Training Accuracy:  63.35%
+  Validation Loss: 1.0351 | Validation Accuracy:  71.37%
+  Learning Rate: 2.21e-05 | Time: 107.8s
+  🎉 New Best Accuracy: 71.37% (saved to best_model_3090.pth)
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  17: 100%|██████████| 897/897 [01:28<00:00, 10.09it/s, Loss=1.0171, Acc=64.70%, LR=2.21e-05]
+
+📊 Epoch 17 增强统计:
+  cutmix: 379/897 (42.3%)
+  mixup: 230/897 (25.6%)
+  medium: 288/897 (32.1%)
+                                                         
+📊 Epoch  17/80
+  Training Loss: 1.0155 | Training Accuracy:  64.77%
+  Validation Loss: 1.0709 | Validation Accuracy:  71.71%
+  Learning Rate: 2.17e-05 | Time: 107.3s
+  🎉 New Best Accuracy: 71.71% (saved to best_model_3090.pth)
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  18: 100%|██████████| 897/897 [01:38<00:00,  9.07it/s, Loss=1.0012, Acc=65.71%, LR=2.17e-05]
+
+📊 Epoch 18 增强统计:
+  cutmix: 387/897 (43.1%)
+  mixup: 230/897 (25.6%)
+  medium: 280/897 (31.2%)
+                                                         
+📊 Epoch  18/80
+  Training Loss: 1.0010 | Training Accuracy:  65.76%
+  Validation Loss: 1.1214 | Validation Accuracy:  70.47%
+  Learning Rate: 2.14e-05 | Time: 117.2s
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  19: 100%|██████████| 897/897 [01:29<00:00, 10.01it/s, Loss=0.9895, Acc=66.34%, LR=2.14e-05]
+
+📊 Epoch 19 增强统计:
+  cutmix: 418/897 (46.6%)
+  mixup: 211/897 (23.5%)
+  medium: 268/897 (29.9%)
+                                                         
+📊 Epoch  19/80
+  Training Loss: 0.9891 | Training Accuracy:  66.34%
+  Validation Loss: 1.0611 | Validation Accuracy:  71.37%
+  Learning Rate: 2.10e-05 | Time: 107.9s
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  20: 100%|██████████| 897/897 [01:29<00:00, 10.08it/s, Loss=0.9626, Acc=67.36%, LR=2.10e-05]
+
+📊 Epoch 20 增强统计:
+  cutmix: 405/897 (45.2%)
+  mixup: 239/897 (26.6%)
+  medium: 253/897 (28.2%)
+                                                         
+📊 Epoch  20/80
+  Training Loss: 0.9632 | Training Accuracy:  67.33%
+  Validation Loss: 1.0575 | Validation Accuracy:  71.64%
+  Learning Rate: 2.06e-05 | Time: 107.4s
+  ⚖️  Dynamic weight adjustment completed
+  💾 Checkpoint saved: checkpoint_3090_epoch_020.pth
+------------------------------------------------------------
+Epoch  21: 100%|██████████| 897/897 [01:39<00:00,  8.98it/s, Loss=0.9659, Acc=67.54%, LR=2.06e-05]
+
+📊 Epoch 21 增强统计:
+  cutmix: 416/897 (46.4%)
+  mixup: 211/897 (23.5%)
+  medium: 270/897 (30.1%)
+                                                         
+📊 Epoch  21/80
+  Training Loss: 0.9657 | Training Accuracy:  67.56%
+  Validation Loss: 1.0476 | Validation Accuracy:  72.40%
+  Learning Rate: 2.02e-05 | Time: 118.1s
+  🎉 New Best Accuracy: 72.40% (saved to best_model_3090.pth)
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  22: 100%|██████████| 897/897 [01:35<00:00,  9.36it/s, Loss=0.9401, Acc=68.64%, LR=2.02e-05]
+
+📊 Epoch 22 增强统计:
+  cutmix: 392/897 (43.7%)
+  mixup: 233/897 (26.0%)
+  medium: 272/897 (30.3%)
+                                                         
+📊 Epoch  22/80
+  Training Loss: 0.9401 | Training Accuracy:  68.64%
+  Validation Loss: 1.0858 | Validation Accuracy:  71.84%
+  Learning Rate: 1.97e-05 | Time: 118.1s
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  23: 100%|██████████| 897/897 [01:29<00:00, 10.03it/s, Loss=0.9433, Acc=68.53%, LR=1.97e-05]
+
+📊 Epoch 23 增强统计:
+  cutmix: 406/897 (45.3%)
+  mixup: 205/897 (22.9%)
+  medium: 286/897 (31.9%)
+                                                         
+📊 Epoch  23/80
+  Training Loss: 0.9438 | Training Accuracy:  68.50%
+  Validation Loss: 1.0621 | Validation Accuracy:  72.04%
+  Learning Rate: 1.93e-05 | Time: 107.8s
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  24: 100%|██████████| 897/897 [01:37<00:00,  9.20it/s, Loss=0.9107, Acc=70.02%, LR=1.93e-05]
+
+📊 Epoch 24 增强统计:
+  cutmix: 382/897 (42.6%)
+  mixup: 260/897 (29.0%)
+  medium: 255/897 (28.4%)
+                                                         
+📊 Epoch  24/80
+  Training Loss: 0.9103 | Training Accuracy:  70.04%
+  Validation Loss: 1.0567 | Validation Accuracy:  72.18%
+  Learning Rate: 1.88e-05 | Time: 115.9s
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------
+Epoch  25: 100%|██████████| 897/897 [01:41<00:00,  8.80it/s, Loss=0.9171, Acc=70.12%, LR=1.88e-05]
+
+📊 Epoch 25 增强统计:
+  cutmix: 425/897 (47.4%)
+  mixup: 222/897 (24.7%)
+  medium: 250/897 (27.9%)
+                                                         
+📊 Epoch  25/80
+  Training Loss: 0.9173 | Training Accuracy:  70.12%
+  Validation Loss: 1.0854 | Validation Accuracy:  72.03%
+  Learning Rate: 1.83e-05 | Time: 125.1s
+  ⚖️  Dynamic weight adjustment completed
+  💾 Checkpoint saved: checkpoint_3090_epoch_025.pth
+------------------------------------------------------------
+Epoch  26: 100%|██████████| 897/897 [01:46<00:00,  8.45it/s, Loss=0.8945, Acc=71.08%, LR=1.83e-05]
+
+📊 Epoch 26 增强统计:
+  cutmix: 426/897 (47.5%)
+  mixup: 230/897 (25.6%)
+  medium: 241/897 (26.9%)
+                                                         
+📊 Epoch  26/80
+  Training Loss: 0.8960 | Training Accuracy:  71.01%
+  Validation Loss: 1.1105 | Validation Accuracy:  71.51%
+  Learning Rate: 1.79e-05 | Time: 124.5s
+  ⚖️  Dynamic weight adjustment completed
+------------------------------------------------------------

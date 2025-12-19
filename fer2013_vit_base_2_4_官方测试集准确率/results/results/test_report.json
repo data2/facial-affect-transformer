@@ -1,0 +1,71 @@
+{
+    "overall_accuracy": 0.7305656171635553,
+    "class_report": {
+        "angry": {
+            "precision": 0.6296992481203008,
+            "recall": 0.6993736951983298,
+            "f1-score": 0.6627101879327398,
+            "support": 958.0
+        },
+        "disgust": {
+            "precision": 0.8555555555555555,
+            "recall": 0.6936936936936937,
+            "f1-score": 0.7661691542288557,
+            "support": 111.0
+        },
+        "fear": {
+            "precision": 0.6670673076923077,
+            "recall": 0.5419921875,
+            "f1-score": 0.5980603448275862,
+            "support": 1024.0
+        },
+        "happy": {
+            "precision": 0.8846778559826746,
+            "recall": 0.9210822998872604,
+            "f1-score": 0.9025131179232256,
+            "support": 1774.0
+        },
+        "neutral": {
+            "precision": 0.6707224334600761,
+            "recall": 0.7153284671532847,
+            "f1-score": 0.6923076923076923,
+            "support": 1233.0
+        },
+        "sad": {
+            "precision": 0.6020408163265306,
+            "recall": 0.6150761828388132,
+            "f1-score": 0.6084886949623165,
+            "support": 1247.0
+        },
+        "surprise": {
+            "precision": 0.8716931216931217,
+            "recall": 0.7930204572803851,
+            "f1-score": 0.8304977945809704,
+            "support": 831.0
+        },
+        "accuracy": 0.7305656171635553,
+        "macro avg": {
+            "precision": 0.7402080484043667,
+            "recall": 0.7113667119359668,
+            "f1-score": 0.7229638552519123,
+            "support": 7178.0
+        },
+        "weighted avg": {
+            "precision": 0.7317966882834417,
+            "recall": 0.7305656171635553,
+            "f1-score": 0.7294424150164946,
+            "support": 7178.0
+        }
+    },
+    "class_names": [
+        "angry",
+        "disgust",
+        "fear",
+        "happy",
+        "neutral",
+        "sad",
+        "surprise"
+    ],
+    "total_samples": 7178,
+    "timestamp": "2025-12-18T11:00:36.984264"
+}
