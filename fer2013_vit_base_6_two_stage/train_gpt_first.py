@@ -328,7 +328,7 @@ def train_main():
     scaler = torch.amp.GradScaler(enabled=config.use_amp)
 
     for epoch in range(config.num_epochs):
-        print(f"\n{'='*20} Epoch {epoch+1}/{config.num_epochs} {'='*20}\n")
+        print(f"\n{'='*20} Epoch {epoch+1}/{config.num_epochs} {'='*20}\n") 
 
         criterion.epoch = epoch
 
@@ -338,13 +338,35 @@ def train_main():
         # --------- 验证 ---------
         val_loss, val_acc = validate(ema.ema_model, val_loader, criterion, config)
 
+        # --------- 保存最佳模型 ---------
+        if epoch == 0:
+            best_val_acc = val_acc
+        else:
+            if val_acc > best_val_acc:
+                best_val_acc = val_acc
+                os.makedirs('./weights', exist_ok=True)
+                torch.save({
+                    'epoch': epoch+1,
+                    'model_state_dict': ema.ema_model.state_dict(),
+                    'optimizer_state_dict': optimizer.state_dict(),
+                    'scheduler_state_dict': scheduler.state_dict(),
+                    'best_val_acc': best_val_acc
+                }, f'./weights/best_model.pth')
+                print(f"*** 保存最佳模型: Epoch {epoch+1}, Val Acc={val_acc*100:.2f}% ***")
+
         # 学习率更新
         scheduler.step()
         # epoch 总结
         print(f"\n[Epoch {epoch+1} Summary]")
         print(f"  Train Loss: {train_loss:.4f}, Train Acc: {train_acc*100:.2f}%")
         print(f"  Val Loss:   {val_loss:.4f}, Val Acc:   {val_acc*100:.2f}%")
-        print(f"{'='*60}\n")
+        print(f"  Learning Rate: {optimizer.param_groups[0]['lr']:.6f}")
+        print(f"  Best Val Acc so far: {best_val_acc*100:.2f}%")
+        print(f"  Samples : train={len(train_loader.dataset)}, val={len(val_loader.dataset)}")
+        print(f"  EMA     : Enabled")
+        print(f"  Augment : CutMix({config.cutmix_prob}) | MixUp({config.mixup_prob})")
+        print(f"{'-'*60}")
+
 
 if __name__=='__main__':
     train_main()
