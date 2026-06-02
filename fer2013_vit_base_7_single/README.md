@@ -9,12 +9,12 @@
 
 **表 4-2 本文算法消融实验结果表**
 
-| 实验编号 | 方法配置 | Acc (%) | F1-score (%) | Best Epoch |
+| 实验编号 | 方法配置 | Acc (%) | F1-score (%) | Best Epoch | 实验组
 | --- | --- | --- | --- | --- |
-| 1 | Vanilla ViT (Base) | 72.05 | 70.87 | 60 |
-| 2 | Base + LLRD & EMA | 73.27 | 72.41 | 46 |
-| 3 | Exp. 2 + Spatial Head | 73.89 | 73.12 | 58 |
-| 4 | **Full Config (Final)** | **74.21** | **73.13** | **21** |
+| 1 | Vanilla ViT (Base) | 72.05 | 70.87 | 60 | exp1 | 
+| 2 | Base + LLRD & EMA | 73.27 | 72.41 | 46 | exp3 | 
+| 3 | Exp. 2 + Spatial Head | 73.89 | 73.12 | 58 | exp5_v3 | 
+| 4 | **Full Config (Final)** | **74.21** | **73.13** | **21** | exp5_v3_repeated | 
 
 </center>
 
